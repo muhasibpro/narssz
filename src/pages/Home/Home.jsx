@@ -14,12 +14,12 @@ import Footer from '../../components/Footer/Footer';
 // 1. Barcha fon rasmlarini bitta joyga yig'ib olamiz.
 // Har bir section uchun alohida rasm manzilini yozamiz.
 const sectionBackgrounds = {
-    default: "url('http://93.188.83.2:8088/mixinfo/2025-07-02 21.33.20.jpg')",
-    whyUs: "url('http://93.188.83.2:8088/mixinfo/2025-07-02 21.33.00.jpg')",
-    featured: "url('http://93.188.83.2:8088/mixinfo/2025-07-02 21.32.35.jpg')",
-    about: "url('http://93.188.83.2:8088/mixinfo/2025-07-02 21.33.51.jpg')",
-    gallery: "url('http://93.188.83.2:8088/mixinfo/2025-07-02 21.32.06.jpg')",
-    cta: "url('http://93.188.83.2:8088/mixinfo/2025-07-02%2021.30.48.jpg')"
+    default: "url('https://muhasib.pro/uploads/images/2025-07-02 21.33.20.jpg')",
+    whyUs: "url('https://muhasib.pro/uploads/images/2025-07-02 21.33.00.jpg')",
+    featured: "url('https://muhasib.pro/uploads/images/2025-07-02 21.32.35.jpg')",
+    about: "url('https://muhasib.pro/uploads/images/2025-07-02 21.33.51.jpg')",
+    gallery: "url('https://muhasib.pro/uploads/images/2025-07-02 21.32.06.jpg')",
+    cta: "url('https://muhasib.pro/uploads/images/2025-07-02%2021.30.48.jpg')"
 };
 
 const Home = () => {
