@@ -1,0 +1,55 @@
+.products-page {
+    padding-bottom: 80px;
+}
+
+.page-header {
+    background: url('http://93.188.83.2:8088/mixinfo/2025-07-02 21.33.00.jpg/photo-1533044309904-5fa721e0b679?auto=format&fit=crop&q=80') center/cover;
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: white;
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.filter-btn:hover {
+    background: var(--primary-accent);
+    color: #fff;
+    border-color: var(--primary-accent);
+}
+
+.filter-btn.active {
+    background: var(--header-bg);
+    color: #fff;
+    border-color: var(--header-bg);
+}
+
+.products-grid-full {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* .product-card stillari Home.css dan olinadi, agar bir xil bo'lsa. Aks holda shu yerda yoziladi */

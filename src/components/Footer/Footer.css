@@ -1,0 +1,38 @@
+/* Asosiy
+ 'footer' elementi faqat yuqoridan joy ajratadi */
+.footer {
+    margin-top: 60px; /* Sahifa kontentidan ajralib turishi uchun */
+    padding: 0 20px;   /* Kichik ekranlarda yonidan joy qoldirish */
+}
+
+/* Barcha stillar 'footer' ichidagi 'container'ga beriladi */
+.footer .container {
+    /* Yarim-shaffof fon va 'oyna' effekti */
+    background: rgba(10, 25, 47, 0.6); /* Yarim-shaffof to'q rang */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Dumaloq qirralar va chegara */
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Ichki bo'shliq */
+    padding: 25px 30px;
+
+    /* Konteynerning o'zini markazlashtirish */
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Eng pastki qismdagi matn uchun */
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #c1c9d4; /* Ochroq kulrang matn */
+}

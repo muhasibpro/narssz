@@ -1,0 +1,72 @@
+.contact-page {
+    padding-bottom: 80px;
+    
+}
+
+.container{
+        /* 1. Orqa fonni yarim-shaffof qilish */
+        background-color: rgba(255, 255, 255, 0.2); /* Oq rang, 20% shaffoflik bilan */
+    
+        /* 2. Orqadagi kontentni xiralashtirish */
+        backdrop-filter: blur(10px);
+        
+        /* Chiroyliroq ko'rinish uchun qo'shimcha stillar */
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        padding: 30px;
+}
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+    margin: 80px 0;
+}
+
+.contact-info-section,
+.contact-form-section {
+    flex: 1;
+}
+
+.contact-info-section h3,
+.contact-form-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.info-item .icon {
+    font-size: 1.5rem;
+    color: var(--primary-accent);
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form-section button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.map-section {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media(max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}

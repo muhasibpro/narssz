@@ -1,0 +1,115 @@
+/* O'zgaruvchilar (globals.css yoki :root da bo'lishi mumkin) */
+:root {
+    --off-white: #f8f9fa;
+    --primary-accent: #ffd700;
+    --font-display: 'Montserrat', sans-serif;
+    --font-primary: 'Roboto', sans-serif;
+}
+
+/* ========================================= */
+/* ASOSIY HEADER STILLARI           */
+/* ========================================= */
+.header {
+    background-color: transparent;
+    padding: 25px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Scrolled holati */
+.header.scrolled {
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================= */
+/* LOGO VA NAVIGATSIYA             */
+/* ========================================= */
+.logo {
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 10;
+}
+.logo-main {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--off-white);
+    transition: all 0.3s ease;
+}
+.logo-tagline {
+    font-family: var(--font-primary);
+    font-size: 11px;
+    color: var(--primary-accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 20px;
+    font-weight: 400;
+    padding-bottom: 8px;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+.nav-link.active {
+    color: var(--off-white);
+    font-weight: 700;
+}
+.nav-link:hover {
+    color: var(--off-white);
+}
+.nav-icon {
+    display: none; /* Katta ekranlarda ikonka ko'rinmaydi */
+}
+
+/* Scrolled holatdagi ranglar */
+.header.scrolled .logo-main,
+.header.scrolled .nav-link.active,
+.header.scrolled .nav-link:hover {
+    color: #000000;
+}
+.header.scrolled .logo-tagline {
+    color: #555555;
+}
+.header.scrolled .nav-link {
+    color: #333333;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1100;
+    color: var(--off-white); /* Boshida oq rang */
+    transition: color 0.3s ease;
+}
+.header.scrolled .menu-icon {
+    color: #000; /* Scrollda qora rang */
+}
+

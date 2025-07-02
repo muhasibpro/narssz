@@ -1,0 +1,370 @@
+/* Bu klass App.jsx dagi <main> tegiga kerak bo'lmaydi, chunki header endi fixed */
+.home-page main {
+    padding-top: 0;
+}
+
+.home-page-wrapper {
+    position: relative;
+    /* z-index ishlashi uchun */
+}
+
+/* 1. Yopishqoq Hero Section stillari */
+.sticky-hero {
+    height: 100vh;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://skfm-mebel.ru/wp-content/uploads/2022/06/gostinaya_markiza-zoloto.jpg') center/cover; */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.sticky-hero {
+    height: 100vh; /* Ekran bo'yi balandlik */
+    
+    /* `background` xususiyatini olib tashladik. U endi JavaScriptdan keladi */
+
+    /* YANGI QO'SHILGAN STILLAR */
+    background-position: center;
+    background-size: cover;
+    /* Rasm almashganda 0.7 soniya davomida silliq o'tishini ta'minlaydi */
+    transition: background-image 0.7s ease-in-out;
+    
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Bu rasm ustiga yotadigan qora, yarim-shaffof parda.
+   Matn har doim yaxshi ko'rinishi uchun kerak. */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% qoralik */
+}
+
+/* Asosiy kontent (sarlavha, tugma) pardaning ustida turishi kerak */
+.hero-content {
+    position: relative; /* Bu hero-overlay'dan ustunroq bo'lishi uchun kerak */
+    z-index: 2;
+    /* ... qolgan stillari o'zgarmaydi ... */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+
+.btn-primary {
+    background: var(--primary-accent);
+    color: var(--header-bg);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Hero'dan keyingi kontent uchun o'rovchi */
+.content-after-hero {
+    position: relative;
+    z-index: 3;
+    /* Hero'dan balandroq qatlamda turadi */
+}
+
+
+/* 2. O'zining foniga ega bo'limlar */
+.solid-bg {
+    background: var(--off-white);
+}
+
+.why-us-section {
+    padding: 80px 0;
+}
+
+
+
+
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-accent);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--header-bg);
+}
+
+.feature-item p {
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* 3. Shaffof fonli bo'lim */
+.transparent-bg {
+    background: transparent;
+    /* Bu orqadagi Hero'ni ko'rsatadi */
+    padding: 80px 0;
+}
+
+/* Orqa fon to'q rangda bo'lgani uchun, bu bo'limdagi matnlar oq bo'lishi kerak */
+.text-light {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Product Card stillari o'zgarishsiz qoladi */
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-container {
+    overflow: hidden;
+    height: 220px;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--header-bg);
+    margin-bottom: 20px;
+}
+
+.btn-secondary {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #000;
+}
+
+/* 4. O'zining foniga ega bo'lgan oxirgi Section */
+.cta-section {
+    padding: 80px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+
+/* Home.css faylidagi o'zgarishlar */
+
+/* ... boshqa stillaringiz ... */
+
+/* 1. Yopishqoq Hero Section stillari */
+.sticky-hero {
+    height: 100vh;
+    /* Ekran bo'yi balandlik */
+    
+    /* !!! BU QATORNI O'CHIRAMIZ YOKI KOMMENTGA OLAMIZ, CHUNKI U JS'DAN KELADI !!! */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(...) center/cover; */
+
+    /* YANGI XUSUSIYATLAR */
+    background-position: center;
+    background-size: cover;
+    transition: background-image 0.8s ease-in-out; /* Rasm almashishini silliq qiladi */
+    
+    /* Z-index va position o'zgarishsiz qoladi */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Fon rasmini to'qartirish uchun psevdo-element qo'shamiz */
+.sticky-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* To'qartiruvchi qatlam */
+    z-index: -1; /* Kontent orqasida turishi uchun */
+}
+
+/* Hero kontenti uchun z-index beramiz, u ::before dan balandda turishi uchun */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* ... qolgan stillari o'zgarishsiz ... */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+/* ... qolgan barcha CSS stillaringiz o'zgarishsiz qoladi ... */
+
+
+
+
+
+
+/* Asosiy
+ 'footer' elementi faqat yuqoridan joy ajratadi */
+ .footer {
+    padding-bottom: 100px;
+    margin-top: 60px; /* Sahifa kontentidan ajralib turishi uchun */
+    padding: 0 20px;   /* Kichik ekranlarda yonidan joy qoldirish */
+}
+
+/* Barcha stillar 'footer' ichidagi 'container'ga beriladi */
+.footer .container {
+    /* Yarim-shaffof fon va 'oyna' effekti */
+    background: rgba(10, 25, 47, 0.6); /* Yarim-shaffof to'q rang */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Dumaloq qirralar va chegara */
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Ichki bo'shliq */
+    padding: 25px 30px;
+
+    /* Konteynerning o'zini markazlashtirish */
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Eng pastki qismdagi matn uchun */
+.footer-bottom {
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #c1c9d4; /* Ochroq kulrang matn */
+}
+
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 20px;
+    color: #222;
+    transition: opacity 0.6s ease;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #b49c9c;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 40px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, #d4af37, #b8860b);
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #b8860b, #d4af37);
+    box-shadow: 0 6px 16px rgba(184,134,11,0.6);
+  }
+  
