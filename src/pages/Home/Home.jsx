@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; // useRef ni import qilamiz
 import { Link } from 'react-router-dom';
 import { FaShippingFast, FaAward, FaHeadset } from 'react-icons/fa';
-// Yordamchini chaqirib olamiz
 import { useInView } from 'react-intersection-observer';
 import { products } from '../../data';
 import './Home.css';
@@ -11,8 +10,6 @@ import Gallery from '../Gallery/Gallery';
 import Contact from '../Contact/Contact';
 import Footer from '../../components/Footer/Footer';
 
-// 1. Barcha fon rasmlarini bitta joyga yig'ib olamiz.
-// Har bir section uchun alohida rasm manzilini yozamiz.
 const sectionBackgrounds = {
     default: "url('https://muhasib.pro/uploads/images/2025-07-02 21.33.20.jpg')",
     whyUs: "url('https://muhasib.pro/uploads/images/2025-07-02 21.33.00.jpg')",
@@ -25,9 +22,6 @@ const sectionBackgrounds = {
 const Home = () => {
     const featuredProducts = products.slice(0, 3);
     const [heroContentOpacity, setHeroContentOpacity] = useState(1);
-
-    // 2. Orqa fon uchun qaysi rasmni ishlatishni saqlab turadigan "xotira" (state) yaratamiz.
-    // Boshlanishiga 'default' rasmni qo'yamiz.
     const [bgImage, setBgImage] = useState(sectionBackgrounds.default);
 
     useEffect(() => {
@@ -38,17 +32,29 @@ const Home = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // 3. Har bir section uchun "kuzatuvchi" yaratamiz.
-    // `threshold` - sectionning qancha qismi ko'ringanda ishga tushishi (0.4 = 40%)
+    // useInView hook'idan olingan ref'lar
     const { ref: whyUsRef, inView: isWhyUsVisible } = useInView({ threshold: 0.4 });
     const { ref: featuredRef, inView: isFeaturedVisible } = useInView({ threshold: 0.4 });
     const { ref: aboutRef, inView: isAboutVisible } = useInView({ threshold: 0.4 });
     const { ref: galleryRef, inView: isGalleryVisible } = useInView({ threshold: 0.4 });
     const { ref: ctaRef, inView: isCtaVisible } = useInView({ threshold: 0.4 });
+    
+    // 1. YORDAMCHI REF YARATAMIZ (SCROLL UCHUN)
+    // `useInView` ref'i bilan chalkashmaslik uchun alohida ref yaratgan ma'qul.
+    // Ammo, biz to'g'ridan-to'g'ri `id` orqali ham murojaat qila olamiz, bu yanada oson.
+    
+    // YORDAMCHI FUNKSIYA YARATAMIZ (SCROLL UCHUN)
+    const handleScrollToGallery = () => {
+        // `gallery` section'iga bog'langan elementni `id` orqali topamiz
+        const gallerySection = document.getElementById('products');
+        // Agar element topilsa, unga silliq o'tamiz
+        if (gallerySection) {
+            gallerySection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-    // 4. Qaysidir "kuzatuvchi" o'zgarishini (section ko'rinishini) kuzatib boramiz.
+
     useEffect(() => {
-        // Qaysi section ko'rinsa, o'shaning rasmini orqa fonga o'rnatamiz.
         if (isGalleryVisible) {
             setBgImage(sectionBackgrounds.gallery);
         } else if (isAboutVisible) {
@@ -60,35 +66,33 @@ const Home = () => {
         } else if (isWhyUsVisible) {
             setBgImage(sectionBackgrounds.whyUs);
         } else {
-            // Agar hech qaysi ko'rinmasa (eng tepada bo'lsak), boshlang'ich rasmni qaytaramiz.
             setBgImage(sectionBackgrounds.default);
         }
-        // Bu useEffect faqat "kuzatuvchilar" o'zgarganda ishlaydi.
     }, [isWhyUsVisible, isFeaturedVisible, isAboutVisible, isGalleryVisible, isCtaVisible]);
 
     return (
         <div className="home-page-wrapper">
-            {/* 5. Orqa fondagi "yopishqoq" qism.
-                Endi rasm CSS'dan emas, balki "xotiradagi" (bgImage) qiymatdan olinadi. */}
             <section
                 className="sticky-hero"
                 style={{ backgroundImage: bgImage }}
             >
-                <div className="hero-overlay"></div> {/* Rasm ustidan qora parda uchun */}
+                <div className="hero-overlay"></div>
                 <div
                     className="hero-content"
-                    style={{ opacity: heroContentOpacity }}
-                >
+                    style={{ opacity: heroContentOpacity }}>
                     <h1 className="hero-title">Orzuyingizdagi Makonni Yarating</h1>
                     <p className="hero-subtitle">Eng yuqori sifatli materiallardan yaratilgan betakror mebellar kolleksiyasi.</p>
-                    <Link to="" className="btn-primary">Kolleksiyani Ko'rish</Link>
+                    
+                    {/* 2. TUGMANI O'ZGARTIRAMIZ */}
+                    {/* Link'ni button'ga almashtirib, onClick hodisasiga funksiyamizni bog'laymiz */}
+                    <button onClick={handleScrollToGallery} className="btn-primary">
+                        Kolleksiyani Ko'rish
+                    </button>
                 </div>
             </section>
 
             <div className="content-after-hero">
-                {/* 6. Har bir section'ga o'zining "kuzatuvchi"sini bog'lab chiqamiz (ref={...}) */}
                 <section ref={whyUsRef} className="why-us-section solid-bg">
-                    {/* ... (bu section ichidagilar o'zgarmaydi) ... */}
                     <div className="container">
                         <h2 className="section-title" data-aos="fade-up">Nega Aynan Biz?</h2>
                         <div className="features-grid">
@@ -100,7 +104,6 @@ const Home = () => {
                 </section>
 
                 <section ref={featuredRef} className="featured-products-section transparent-bg">
-                    {/* ... (bu section ichidagilar o'zgarmaydi) ... */}
                     <div className="container">
                         <h2 className="section-title text-light" data-aos="fade-up">Eng Ommabop Mahsulotlar</h2>
                         <div className="products-grid">
@@ -112,7 +115,6 @@ const Home = () => {
                 </section>
 
                 <section ref={ctaRef} className="cta-section solid-bg">
-                    {/* ... (bu section ichidagilar o'zgarmaydi) ... */}
                     <div className="container" data-aos="zoom-in"><h2>O'z uslubingizni topishga tayyormisiz?</h2><p>Bizning dizaynerlarimiz sizga yordam berishdan mamnun bo'lishadi.</p><Link to="/contact" className="btn-primary">Hozir Bog'lanish</Link></div>
                 </section>
                 
@@ -120,10 +122,11 @@ const Home = () => {
                     <About />
                 </section>
                 
-                <section id="products"> {/* Bu section uchun alohida rasm qo'ymadik, shuning uchun 'ref' kerak emas */}
+                <section id="products">
                     <Products />
                 </section>
                 
+                {/* Mana shu section'ga scroll bo'ladi. `id="gallery"` biz uchun muhim. */}
                 <section ref={galleryRef} id="gallery">
                     <Gallery />
                 </section>
