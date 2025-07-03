@@ -31,7 +31,7 @@ const Header = () => {
             <div className="container">
                 <nav className="navbar">
                     <Link to="home" {...scrollProps} className="logo" onClick={closeMenu}>
-                        <div className="logo-main"><img className='mix-photo'  src="https://muhasib.pro/uploads/images/mix.jpg" alt="" /></div>
+                        <div className="logo-main"><img className='mix-photo'  src="https://muhasib.pro/uploads/images/Tilla.png" alt="" /></div>
                         
                     </Link>
 
