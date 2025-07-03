@@ -38,11 +38,11 @@ const Home = () => {
     const { ref: aboutRef, inView: isAboutVisible } = useInView({ threshold: 0.4 });
     const { ref: galleryRef, inView: isGalleryVisible } = useInView({ threshold: 0.4 });
     const { ref: ctaRef, inView: isCtaVisible } = useInView({ threshold: 0.4 });
-    
+
     // 1. YORDAMCHI REF YARATAMIZ (SCROLL UCHUN)
     // `useInView` ref'i bilan chalkashmaslik uchun alohida ref yaratgan ma'qul.
     // Ammo, biz to'g'ridan-to'g'ri `id` orqali ham murojaat qila olamiz, bu yanada oson.
-    
+
     // YORDAMCHI FUNKSIYA YARATAMIZ (SCROLL UCHUN)
     const handleScrollToGallery = () => {
         // `gallery` section'iga bog'langan elementni `id` orqali topamiz
@@ -82,7 +82,7 @@ const Home = () => {
                     style={{ opacity: heroContentOpacity }}>
                     <h1 className="hero-title">Orzuyingizdagi Makonni Yarating</h1>
                     <p className="hero-subtitle">Eng yuqori sifatli materiallardan yaratilgan betakror mebellar kolleksiyasi.</p>
-                    
+
                     {/* 2. TUGMANI O'ZGARTIRAMIZ */}
                     {/* Link'ni button'ga almashtirib, onClick hodisasiga funksiyamizni bog'laymiz */}
                     <button onClick={handleScrollToGallery} className="btn-primary">
@@ -108,7 +108,7 @@ const Home = () => {
                         <h2 className="section-title text-light" data-aos="fade-up">Eng Ommabop Mahsulotlar</h2>
                         <div className="products-grid">
                             {featuredProducts.map(product => (
-                                <div key={product.id} className="product-card" data-aos="fade-up" data-aos-delay={product.id * 100}><div className="product-image-container"><img src={product.img} alt={product.name} className="product-image" /></div><div className="product-info"><h3 className="product-name">{product.name}</h3><p className="product-price">{product.price}</p><Link to="/products" className="btn-secondary">Batafsil</Link></div></div>
+                                <div key={product.id} className="product-card" data-aos="fade-up" data-aos-delay={product.id * 100}><div className="product-image-container"><img src={product.img} alt={product.name} className="product-image" /></div><div className="product-info"><h3 className="product-name">{product.name}</h3><p className="product-price">{product.price}</p></div></div>
                             ))}
                         </div>
                     </div>
@@ -117,15 +117,15 @@ const Home = () => {
                 <section ref={ctaRef} className="cta-section solid-bg">
                     <div className="container" data-aos="zoom-in"><h2>O'z uslubingizni topishga tayyormisiz?</h2><p>Bizning dizaynerlarimiz sizga yordam berishdan mamnun bo'lishadi.</p><Link to="/contact" className="btn-primary">Hozir Bog'lanish</Link></div>
                 </section>
-                
+
                 <section ref={aboutRef} id="about">
                     <About />
                 </section>
-                
+
                 <section id="products">
                     <Products />
                 </section>
-                
+
                 {/* Mana shu section'ga scroll bo'ladi. `id="gallery"` biz uchun muhim. */}
                 <section ref={galleryRef} id="gallery">
                     <Gallery />
