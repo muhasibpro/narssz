@@ -81,7 +81,7 @@ const Home = () => {
                 >
                     <h1 className="hero-title">Orzuyingizdagi Makonni Yarating</h1>
                     <p className="hero-subtitle">Eng yuqori sifatli materiallardan yaratilgan betakror mebellar kolleksiyasi.</p>
-                    <Link to="/products" className="btn-primary">Kolleksiyani Ko'rish</Link>
+                    <Link to="" className="btn-primary">Kolleksiyani Ko'rish</Link>
                 </div>
             </section>
 

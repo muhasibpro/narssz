@@ -37,6 +37,25 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.mix-photo{
+    
+    width: 100px;          /* Kenglik */
+    height: 50px;         /* Balandlik (kenglikdan farqli) */
+    background-color: #007bff; /* Orqa fon rangi */
+    color: white;          /* Matn rangi */
+    
+    /* ENG MUHIM QISM: Oval yasash uchun */
+    border-radius: 50%;
+    
+    /* Matnni chiroyli ko'rsatish uchun */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: sans-serif;
+    object-fit: cover;
+}
+
 /* ========================================= */
 /* LOGO VA NAVIGATSIYA             */
 /* ========================================= */
