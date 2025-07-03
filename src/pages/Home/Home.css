@@ -358,7 +358,7 @@
     background: linear-gradient(90deg, #d4af37, #b8860b);
     border-radius: 30px;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(212,175,55,0.4);
+    
     transition: background 0.3s ease, box-shadow 0.3s ease;
     user-select: none;
   }

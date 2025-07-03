@@ -53,7 +53,7 @@
     align-items: center;
     font-size: 24px;
     font-family: sans-serif;
-    object-fit: cover;
+    object-fit: cover   ;
 }
 
 /* ========================================= */
@@ -117,7 +117,7 @@
     color: #555555;
 }
 .header.scrolled .nav-link {
-    color: #333333;
+    color: rgb(165, 141, 22);
 }
 
 .menu-icon {

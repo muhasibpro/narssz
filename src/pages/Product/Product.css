@@ -3,7 +3,7 @@
 }
 
 .page-header {
-    background: url('http://93.188.83.2:8088/mixinfo/2025-07-02 21.33.00.jpg/photo-1533044309904-5fa721e0b679?auto=format&fit=crop&q=80') center/cover;
+    background: url('https://images.unsplash.com/photo-1533044309904-5fa721e0b679?auto=format&fit=crop&q=80') center/cover;
     padding: 80px 0;
     text-align: center;
     color: #fff;
@@ -52,4 +52,174 @@
     gap: 30px;
 }
 
-/* .product-card stillari Home.css dan olinadi, agar bir xil bo'lsa. Aks holda shu yerda yoziladi */
+/* ======================================================= */
+/* === O'ZGARTIRISH: MAHSULOT KARTASI UCHUN ASL STILLAR === */
+/* ======================================================= */
+
+.product-card {
+    background:transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer; /* Bosish mumkinligini bildiradi */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 280px; /* Rasm uchun bir xil balandlik */
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+    background: transparent;
+    background:rgba(193, 193, 193, 0) !important ; /* Orqa fonni shaffof qiladi */
+}
+
+.product-name {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: var(--primary-accent, #007bff);
+    font-weight: 600;
+}
+
+
+/* ======================================================= */
+/* === O'ZGARTIRISH: MAHSULOT KARTASI UCHUN YANGI STILLAR === */
+/* ======================================================= */
+
+.product-card {
+    /* O'zgartirish: Ota-element uchun position: relative qo'shildi */
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer; /* Bosish mumkinligini bildiradi */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.product-image-container {
+    width: 100%;
+    height: 420px; /* Balandlikni biroz o'zgartirish mumkin */
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* O'zgartirish: Yozuv bloki rasm ustiga joylashtirildi */
+.product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px 20px 20px; /* Pastdan va yonlardan joy */
+    text-align: left; /* Matnni chapga tekislash */
+    /* Yozuv o'qilishi oson bo'lishi uchun pastdan yuqoriga qoraytirilgan fon */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* O'zgartirish: Yozuv ranglari oq rangga o'zgartirildi */
+.product-name {
+    font-size: 1.2rem;
+    color: #fff; /* Oq rang */
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Yozuvga soya */
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #fff; /* Oq rang */
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Lightbox stillari o'zgarishsiz qoladi */
+/* ======================================================= */
+/* === O'ZGARTIRISH: LIGHTBOX UCHUN YANGI STILLAR === */
+/* ======================================================= */
+/* ... (bu qism o'zgarishsiz qoladi) ... */
+
+
+/* ======================================================= */
+/* === O'ZGARTIRISH: LIGHTBOX UCHUN YANGI STILLAR === */
+/* ======================================================= */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.close-btn, .nav-btn {
+    position: absolute;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover, .nav-btn:hover {
+    transform: scale(1.1);
+}
+
+.close-btn {
+    top: 20px;
+    right: 30px;
+}
+
+.nav-btn {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
