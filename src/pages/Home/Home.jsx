@@ -115,7 +115,7 @@ const Home = () => {
                 </section>
 
                 <section ref={ctaRef} className="cta-section solid-bg">
-                    <div className="container" data-aos="zoom-in"><h2>O'z uslubingizni topishga tayyormisiz?</h2><p>Bizning dizaynerlarimiz sizga yordam berishdan mamnun bo'lishadi.</p><Link to="/contact" className="btn-primary">Hozir Bog'lanish</Link></div>
+                    <div className="container" data-aos="zoom-in"><h2>O'z uslubingizni topishga tayyormisiz?</h2><p>Bizning dizaynerlarimiz sizga yordam berishdan mamnun bo'lishadi.</p><Link to="" className="btn-primary">Hozir Bog'lanish</Link></div>
                 </section>
 
                 <section ref={aboutRef} id="about">
