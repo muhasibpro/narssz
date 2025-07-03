@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'; // useRef ni import qilamiz
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaShippingFast, FaAward, FaHeadset } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
@@ -32,27 +32,28 @@ const Home = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // useInView hook'idan olingan ref'lar
     const { ref: whyUsRef, inView: isWhyUsVisible } = useInView({ threshold: 0.4 });
     const { ref: featuredRef, inView: isFeaturedVisible } = useInView({ threshold: 0.4 });
     const { ref: aboutRef, inView: isAboutVisible } = useInView({ threshold: 0.4 });
     const { ref: galleryRef, inView: isGalleryVisible } = useInView({ threshold: 0.4 });
     const { ref: ctaRef, inView: isCtaVisible } = useInView({ threshold: 0.4 });
 
-    // 1. YORDAMCHI REF YARATAMIZ (SCROLL UCHUN)
-    // `useInView` ref'i bilan chalkashmaslik uchun alohida ref yaratgan ma'qul.
-    // Ammo, biz to'g'ridan-to'g'ri `id` orqali ham murojaat qila olamiz, bu yanada oson.
-
-    // YORDAMCHI FUNKSIYA YARATAMIZ (SCROLL UCHUN)
     const handleScrollToGallery = () => {
-        // `gallery` section'iga bog'langan elementni `id` orqali topamiz
         const gallerySection = document.getElementById('products');
-        // Agar element topilsa, unga silliq o'tamiz
         if (gallerySection) {
             gallerySection.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
+    // 1. YORDAMCHI FUNKSIYA YARATAMIZ (CONTACT UCHUN)
+    const handleScrollToContact = () => {
+        // `contact` section'iga bog'langan elementni `id` orqali topamiz
+        const contactSection = document.getElementById('contact');
+        // Agar element topilsa, unga silliq o'tamiz
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     useEffect(() => {
         if (isGalleryVisible) {
@@ -82,9 +83,6 @@ const Home = () => {
                     style={{ opacity: heroContentOpacity }}>
                     <h1 className="hero-title">Orzuyingizdagi Makonni Yarating</h1>
                     <p className="hero-subtitle">Eng yuqori sifatli materiallardan yaratilgan betakror mebellar kolleksiyasi.</p>
-
-                    {/* 2. TUGMANI O'ZGARTIRAMIZ */}
-                    {/* Link'ni button'ga almashtirib, onClick hodisasiga funksiyamizni bog'laymiz */}
                     <button onClick={handleScrollToGallery} className="btn-primary">
                         Kolleksiyani Ko'rish
                     </button>
@@ -115,7 +113,12 @@ const Home = () => {
                 </section>
 
                 <section ref={ctaRef} className="cta-section solid-bg">
-                    <div className="container" data-aos="zoom-in"><h2>O'z uslubingizni topishga tayyormisiz?</h2><p>Bizning dizaynerlarimiz sizga yordam berishdan mamnun bo'lishadi.</p><Link to="" className="btn-primary">Hozir Bog'lanish</Link></div>
+                    <div className="container" data-aos="zoom-in">
+                        <h2>O'z uslubingizni topishga tayyormisiz?</h2>
+                        <p>Bizning dizaynerlarimiz sizga yordam berishdan mamnun bo'lishadi.</p>
+                        {/* 2. TUGMANI O'ZGARTIRAMIZ */}
+                        <button onClick={handleScrollToContact} className="btn-primary">Hozir Bog'lanish</button>
+                    </div>
                 </section>
 
                 <section ref={aboutRef} id="about">
@@ -126,11 +129,11 @@ const Home = () => {
                     <Products />
                 </section>
 
-                {/* Mana shu section'ga scroll bo'ladi. `id="gallery"` biz uchun muhim. */}
                 <section ref={galleryRef} id="gallery">
                     <Gallery />
                 </section>
 
+                {/* Mana shu section'ga scroll bo'ladi */}
                 <section id="contact">
                     <Contact />
                 </section>
