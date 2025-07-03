@@ -17,7 +17,7 @@ const About = () => {
                             <p>FELT da bizning asosiy maqsadimiz - bu shunchaki mebel ishlab chiqarish emas, balki sizning uyingizga iliqlik, qulaylik va go'zallik olib kirishdir. Biz har bir detalga e'tibor beramiz, eng sifatli materiallarni tanlaymiz va zamonaviy dizaynni klassik qulaylik bilan uyg'unlashtiramiz.</p>
                         </div>
                         <div className="mission-image">
-                            <img src="http://93.188.83.2:8088/mixinfo/2025-07-02 21.33.00.jpg/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80" alt="Interior Design" />
+                            <img src="https://muhasib.pro/uploads/images/2025-07-02%2021.30.48.jpg" alt="Interior Design" />
                         </div>
                     </div>
                 </div>
