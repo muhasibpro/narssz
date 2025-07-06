@@ -22,6 +22,7 @@
 
 html {
     scroll-behavior: smooth;
+    
 }
 
 body {
@@ -29,12 +30,15 @@ body {
     background-color: var(--light-gray-beige);
     color: var(--text-color);
     line-height: 1.7;
+    /* overflow-x: hidden; */
+    
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--dark-slate-blue);
 }
+
 
 a {
     text-decoration: none;

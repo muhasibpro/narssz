@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// react-scroll kutubxonasidan 'Link' komponentini import qilamiz
 import { Link } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Header.css';
@@ -19,6 +18,14 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        closeMenu();
+    };
+
     const scrollProps = {
         spy: true,
         smooth: true,
@@ -30,22 +37,20 @@ const Header = () => {
         <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
             <div className="container">
                 <nav className="navbar">
-                    <Link to="home" {...scrollProps} className="logo" onClick={closeMenu}>
-                        <div className="logo-main"><img className='mix-photo'  src="https://muhasib.pro/uploads/images/Tilla.png" alt="" /></div>
-                        
-                    </Link>
+                    <div className="logo" onClick={scrollToTop} style={{ cursor: 'pointer' }}>
+                        <img className='logo__image' src="https://muhasib.pro/uploads/images/Tilla.png" alt="Logo" />
+                    </div>
 
                     <div className="menu-icon" onClick={toggleMenu}>
                         {isMenuOpen ? <FaTimes /> : <FaBars />}
                     </div>
 
-                    <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                        {/* Har bir link 'to' orqali kerakli section ID'siga ishora qiladi */}
-                        <Link activeClass="active" to="home" {...scrollProps} onClick={closeMenu} className="nav-link">Home</Link>
-                        <Link activeClass="active" to="about" {...scrollProps} onClick={closeMenu} className="nav-link">About</Link>
-                        <Link activeClass="active" to="products" {...scrollProps} onClick={closeMenu} className="nav-link">Products</Link>
-                        <Link activeClass="active" to="gallery" {...scrollProps} onClick={closeMenu} className="nav-link">Gallery</Link>
-                        <Link activeClass="active" to="contact" {...scrollProps} onClick={closeMenu} className="nav-link">Contact</Link>
+                    <div className={`nav__links ${isMenuOpen ? 'active' : ''}`}>
+                        <div className="nav__link" onClick={scrollToTop}>Home</div>
+                        <Link activeClass="active" to="about" {...scrollProps} onClick={closeMenu} className="nav__link">About</Link>
+                        <Link activeClass="active" to="products" {...scrollProps} onClick={closeMenu} className="nav__link">Products</Link>
+                        <Link activeClass="active" to="gallery" {...scrollProps} onClick={closeMenu} className="nav__link">Gallery</Link>
+                        <Link activeClass="active" to="contact" {...scrollProps} onClick={closeMenu} className="nav__link">Contact</Link>
                     </div>
                 </nav>
             </div>

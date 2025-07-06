@@ -1,20 +1,25 @@
+/* Orqa fon rasmini qo'shish */
 .contact-page {
+    padding-top: 80px; /* Header balandligiga moslab sozlang */
     padding-bottom: 80px;
-    
+    background-size: cover; /* Rasm ekran o'lchamiga moslashadi */
+    background-position: center; /* Rasm markazda joylashadi */
+    background-attachment: fixed; /* Sahifa aylantirilganda rasm qimirlamaydi */
 }
 
+
 .container{
-        /* 1. Orqa fonni yarim-shaffof qilish */
-        background-color: rgba(255, 255, 255, 0.2); /* Oq rang, 20% shaffoflik bilan */
+    /* 1. Orqa fonni yarim-shaffof qilish */
+    background-color: rgba(255, 255, 255, 0.15); /* Oq rang, 15% shaffoflik bilan */
+
+    /* 2. Orqadagi kontentni xiralashtirish (Glassmorphism effekti) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari uchun qo'shimcha */
     
-        /* 2. Orqadagi kontentni xiralashtirish */
-        backdrop-filter: blur(10px);
-        
-        /* Chiroyliroq ko'rinish uchun qo'shimcha stillar */
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-        padding: 30px;
+    /* Chiroyliroq ko'rinish uchun qo'shimcha stillar */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
 }
 .contact-wrapper {
     display: flex;
@@ -31,18 +36,25 @@
 .contact-form-section h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
+    color: #fff; /* Matn rangini oqartirish orqa fon bilan yaxshiroq ko'rinishi uchun */
 }
+
+.contact-info-section p {
+    color: #f0f0f0; /* Matn rangini oqartirish */
+}
+
 
 .info-item {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 15px;
+    color: #fff; /* Matn rangini oqartirish */
 }
 
 .info-item .icon {
     font-size: 1.5rem;
-    color: var(--primary-accent);
+    color: var(--primary-accent); /* Asosiy rang o'zgaruvchisidan foydalanish */
 }
 
 .contact-form-section input,
@@ -50,9 +62,17 @@
     width: 100%;
     padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); /* Shaffof orqa fon */
+    color: #fff; /* Yozuv rangini oq qilish */
 }
+
+.contact-form-section input::placeholder,
+.contact-form-section textarea::placeholder {
+    color: #ddd; /* Placeholder rangini oqartirish */
+}
+
 
 .contact-form-section button {
     width: 100%;
@@ -65,8 +85,15 @@
     overflow: hidden;
 }
 
+.page-header h1{
+        color: #edb808;
+    
+}
+
 @media(max-width: 768px) {
     .contact-wrapper {
         flex-direction: column;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 }

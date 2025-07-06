@@ -1,38 +1,253 @@
-/* Asosiy
- 'footer' elementi faqat yuqoridan joy ajratadi */
+/* src/components/Footer.css */
 .footer {
-    margin-top: 60px; /* Sahifa kontentidan ajralib turishi uchun */
-    padding: 0 20px;   /* Kichik ekranlarda yonidan joy qoldirish */
+    background:transparent;
+    color: #f0f0f0; /* Yengil matn rangi */
+    padding: 60px 40px 20px; /* Yuqori, yon va pastki padding */
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Barcha stillar 'footer' ichidagi 'container'ga beriladi */
-.footer .container {
-    /* Yarim-shaffof fon va 'oyna' effekti */
-    background: rgba(10, 25, 47, 0.6); /* Yarim-shaffof to'q rang */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    
-    /* Dumaloq qirralar va chegara */
-    border-radius: 15px; 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* Ichki bo'shliq */
-    padding: 25px 30px;
-
-    /* Konteynerning o'zini markazlashtirish */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsiv ustunlar */
+    gap: 30px; /* Bo'limlar orasidagi masofa */
     max-width: 1200px;
-    margin: 0 auto;
-    
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 auto 40px; /* Pastki qismdan masofa */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Pastki chiziq */
+    padding-bottom: 40px;
 }
 
-/* Eng pastki qismdagi matn uchun */
+.footer-section {
+    padding: 15px 0;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.footer-section p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Sarlavhalar ostidagi chiziq */
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px; /* Chiziq uzunligi */
+    height: 3px;
+    background-color: #c70039; /* Asosiy rang */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #c70039;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: #c70039;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Ijtimoiy tarmoq havolalari */
+.social-links {
+    display: flex;
+    gap: 15px; /* Ikonkalar orasidagi masofa */
+}
+
+.social-links a {
+    color: #ccc;
+    font-size: 1.6em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #c70039;
+    transform: translateY(-3px); /* Hoverda biroz ko'tarilish */
+}
+
+/* Yangiliklarga obuna bo'lish formasi */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 12px 15px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #f0f0f0;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: #aaa;
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: #c70039;
+}
+
+.newsletter-form button {
+    background-color: #c70039;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #a3002f;
+    transform: translateY(-2px);
+}
+
+/* Pastki qism (copyright va huquqiy havolalar) */
 .footer-bottom {
     text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9em;
+    color: #aaa;
 }
 
 .footer-bottom p {
-    margin: 0;
-    font-size: 14px;
-    color: #c1c9d4; /* Ochroq kulrang matn */
+    margin-bottom: 10px;
+}
+
+.footer-legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-legal-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #c70039;
+}
+
+/* --- Media Queries (Responsivlik) --- */
+
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 25px;
+    }
+    .footer-section h4 {
+        font-size: 1.3em;
+    }
+    .footer-section p,
+    .footer-links ul li a,
+    .newsletter-form input,
+    .newsletter-form button {
+        font-size: 0.9em;
+    }
+    .social-links a {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px 15px;
+    }
+    .footer-content {
+        grid-template-columns: 1fr; /* Kichik ekranlarda bitta ustun */
+        text-align: center; /* Kontentni markazga olish */
+        gap: 25px;
+        padding-bottom: 30px;
+    }
+
+    /* Barcha footer section sarlavhalarining ostki chizig'ini markazga olamiz */
+    .footer-section h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-about .social-links {
+        justify-content: center; /* Ijtimoiy ikonkalarni markazga olish */
+    }
+
+    .footer-newsletter .newsletter-form {
+        align-items: center; /* Input va tugmani markazga olish */
+    }
+
+    .footer-logo {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 15px 10px;
+    }
+    .footer-logo {
+        font-size: 1.8em;
+    }
+    .footer-section h4 {
+        font-size: 1.2em;
+    }
+    .footer-section p,
+    .footer-links ul li a,
+    .newsletter-form input,
+    .newsletter-form button,
+    .footer-bottom p,
+    .footer-legal-links a {
+        font-size: 0.85em;
+    }
+    .social-links a {
+        font-size: 1.2em;
+    }
 }

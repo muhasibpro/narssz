@@ -1,21 +1,23 @@
+/* src/components/Product/Product.css */
+
 .products-page {
     padding-bottom: 80px;
 }
-
 .page-header {
-    background: url('https://images.unsplash.com/photo-1533044309904-5fa721e0b679?auto=format&fit=crop&q=80') center/cover;
     padding: 80px 0;
     text-align: center;
-    color: #fff;
 }
-
 .page-header h1 {
     font-size: 3rem;
-    color: white;
+    color: var(--header-text);
     font-weight: 900;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .filter-bar {
     display: flex;
     justify-content: center;
@@ -23,7 +25,6 @@
     margin: 40px 0;
     flex-wrap: wrap;
 }
-
 .filter-btn {
     background: #fff;
     border: 1px solid #ddd;
@@ -33,143 +34,67 @@
     transition: all 0.3s ease;
     text-transform: capitalize;
 }
-
 .filter-btn:hover {
     background: var(--primary-accent);
     color: #fff;
     border-color: var(--primary-accent);
 }
-
 .filter-btn.active {
     background: var(--header-bg);
     color: #fff;
     border-color: var(--header-bg);
 }
-
 .products-grid-full {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
-
-/* ======================================================= */
-/* === O'ZGARTIRISH: MAHSULOT KARTASI UCHUN ASL STILLAR === */
-/* ======================================================= */
-
 .product-card {
-    background:transparent;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    cursor: pointer; /* Bosish mumkinligini bildiradi */
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
-}
-
-.product-image-container {
-    width: 100%;
-    height: 280px; /* Rasm uchun bir xil balandlik */
-}
-
-.product-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.product-info {
-    padding: 20px;
-    text-align: center;
-    background: transparent;
-    background:rgba(193, 193, 193, 0) !important ; /* Orqa fonni shaffof qiladi */
-}
-
-.product-name {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0 0 10px 0;
-}
-
-.product-price {
-    font-size: 1.1rem;
-    color: var(--primary-accent, #007bff);
-    font-weight: 600;
-}
-
-
-/* ======================================================= */
-/* === O'ZGARTIRISH: MAHSULOT KARTASI UCHUN YANGI STILLAR === */
-/* ======================================================= */
-
-.product-card {
-    /* O'zgartirish: Ota-element uchun position: relative qo'shildi */
     position: relative;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     overflow: hidden;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-    cursor: pointer; /* Bosish mumkinligini bildiradi */
+    cursor: pointer;
 }
-
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.12);
 }
-
 .product-image-container {
     width: 100%;
-    height: 420px; /* Balandlikni biroz o'zgartirish mumkin */
+    height: 420px;
 }
-
 .product-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-/* O'zgartirish: Yozuv bloki rasm ustiga joylashtirildi */
 .product-info {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 40px 20px 20px 20px; /* Pastdan va yonlardan joy */
-    text-align: left; /* Matnni chapga tekislash */
-    /* Yozuv o'qilishi oson bo'lishi uchun pastdan yuqoriga qoraytirilgan fon */
+    padding: 40px 20px 20px 20px;
+    text-align: left;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 }
-
-/* O'zgartirish: Yozuv ranglari oq rangga o'zgartirildi */
-.product-name {
-    font-size: 1.2rem;
-    color: #fff; /* Oq rang */
-    margin: 0 0 5px 0;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Yozuvga soya */
-}
-
-.product-price {
-    font-size: 1.1rem;
-    color: #fff; /* Oq rang */
-    font-weight: 500;
+.product-name, .product-price {
+    color: #fff;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
+.product-name {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+.product-price {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
 
-/* Lightbox stillari o'zgarishsiz qoladi */
-/* ======================================================= */
-/* === O'ZGARTIRISH: LIGHTBOX UCHUN YANGI STILLAR === */
-/* ======================================================= */
-/* ... (bu qism o'zgarishsiz qoladi) ... */
-
-
-/* ======================================================= */
-/* === O'ZGARTIRISH: LIGHTBOX UCHUN YANGI STILLAR === */
-/* ======================================================= */
+/* === LIGHTBOX STILLARI === */
 
 .lightbox {
     position: fixed;
@@ -177,37 +102,90 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 0.3s ease;
+    padding: 40px;
+    box-sizing: border-box;
+    animation: fadeIn 0.4s ease;
 }
 
-.lightbox-img {
-    max-width: 90%;
-    max-height: 80%;
-    object-fit: contain;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+.lightbox-content {
+    display: flex;
+    width: 90%;
+    max-width: 1100px;
+    height: 80vh;
+    max-height: 650px;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    will-change: transform, opacity;
+    animation: smoothAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightbox-info-pane {
+    width: 40%;
+    padding: 40px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.lightbox-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+.lightbox-price {
+    font-size: 1.4rem;
+    color: var(--primary-accent, #00aaff);
+    margin-bottom: 25px;
+}
+
+.lightbox-extra-info {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.lightbox-image-pane {
+    width: 60%;
+    overflow: hidden;
+}
+
+.lightbox-image-pane img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05) translateY(-15px);
+    transition: transform 0.4s ease;
 }
 
 .close-btn, .nav-btn {
     position: absolute;
-    background: none;
+    background: transparent;
     border: none;
-    color: #fff;
-    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2.2rem;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
+    z-index: 2010;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .close-btn:hover, .nav-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    color: #fff;
 }
 
 .close-btn {
-    top: 20px;
+    top: 25px;
     right: 30px;
 }
 
@@ -216,10 +194,44 @@
     transform: translateY(-50%);
 }
 
-.prev { left: 20px; }
-.next { right: 20px; }
+.prev { left: 30px; }
+.next { right: 30px; }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes smoothAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+    .lightbox-content {
+        flex-direction: column;
+        height: 90vh;
+        width: 100%;
+    }
+    .lightbox-info-pane, .lightbox-image-pane {
+        width: 100%;
+    }
+    .lightbox-info-pane {
+        height: 45%;
+        text-align: center;
+        padding: 20px;
+        justify-content: flex-end;
+        padding-bottom: 30px;
+    }
+    .lightbox-image-pane {
+        height: 55%;
+    }
+    .lightbox-title { font-size: 1.8rem; }
+    .lightbox-price { font-size: 1.2rem; }
 }

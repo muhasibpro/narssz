@@ -5,7 +5,7 @@ export const products = [
   { id: 1, name: 'Elegant "Chester" Divani', price: "4,500,000 so'm", category: 'divanlar', img: "https://muhasib.pro/uploads/images/2025-07-02%2021.30.48.jpg" },
   { id: 2, name: 'Minimalist "Loft" Stoli', price: "2,800,000 so'm", category: 'stollar', img: 'https://muhasib.pro/uploads/images/2025-07-02 21.34.03.jpg' },
   { id: 3, name: 'Qulay "Velvet" O\'rindig\'i', price: "1,200,000 so'm", category: 'o\'rindiqlar', img: 'https://muhasib.pro/uploads/images/2025-07-02 21.32.06.jpg' },
-  { id: 3, name: 'Qulay "Velvet" O\'rindig\'i', price: "1,200,000 so'm", category: 'o\'rindiqlar', img: 'https://muhasib.pro/uploads/images/2025-07-02 21.32.19.jpg' },
+  { id: 4, name: 'Qulay "Velvet" O\'rindig\'i', price: "1,200,000 so'm", category: 'o\'rindiqlar', img: 'https://muhasib.pro/uploads/images/2025-07-02 21.32.19.jpg' },
   { id: 5, name: 'Ofis uchun "Ergo" kreslo', price: "1,850,000 so'm", category: 'o\'rindiqlar', img: 'https://muhasib.pro/uploads/images/2025-07-02 21.32.25.jpg' },
   { id: 6, name: 'Yog\'och Javon "Retro"', price: "2,100,000 so'm", category: 'javonlar', img: 'https://muhasib.pro/uploads/images/2025-07-02 21.33.51.jpg' },
   { id: 7, name: 'Hashamatli "Versal" Divani', price: "7,200,000 so'm", category: 'divanlar', img: 'https://muhasib.pro/uploads/images/2025-07-02 21.32.35.jpg' },

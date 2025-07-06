@@ -15,6 +15,7 @@ import About from './pages/About/About.jsx';
 import Products from './pages/Product/Product.jsx';
 import Gallery from './pages/Gallery/Gallery.jsx';
 import Contact from './pages/Contact/Contact.jsx';
+import MainPage from './pages/Home/Home.jsx';
 
 // Har sahifa o'zgarganda yuqoriga chiqarish uchun
 function ScrollToTop() {
@@ -34,14 +35,14 @@ function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<MainPage />} />
           {/* <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} /> */}
         </Routes>
       </main>
-      <Footer />
+      
     </Router>
   );
 }
