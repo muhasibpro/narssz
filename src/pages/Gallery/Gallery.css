@@ -1,5 +1,6 @@
 .gallery-page {
     padding-bottom: 80px;
+    overflow: hidden;
 }
 
 /* .page-header stillari Products.css dan olinishi yoki umumiy qilinishi mumkin */

@@ -5,6 +5,7 @@
     background-size: cover; /* Rasm ekran o'lchamiga moslashadi */
     background-position: center; /* Rasm markazda joylashadi */
     background-attachment: fixed; /* Sahifa aylantirilganda rasm qimirlamaydi */
+    overflow: hidden;
 }
 
 

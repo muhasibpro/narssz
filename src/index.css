@@ -22,16 +22,16 @@
 
 html {
     scroll-behavior: smooth;
-    
+    /* Saytdan tashqari soha uchun qora fon */
+    background-color: #000000;
 }
 
 body {
     font-family: var(--font-primary);
-    background-color: var(--light-gray-beige);
+    /* Bu sizning kontentingiz joylashgan asosiy oqish fon */
+    background-color: var(--light-gray-beige); 
     color: var(--text-color);
     line-height: 1.7;
-    /* overflow-x: hidden; */
-    
 }
 
 h1, h2, h3, h4, h5, h6 {

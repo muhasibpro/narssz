@@ -2,6 +2,7 @@
 
 .products-page {
     padding-bottom: 80px;
+    overflow: hidden;
 }
 .page-header {
     padding: 80px 0;
@@ -9,7 +10,7 @@
 }
 .page-header h1 {
     font-size: 3rem;
-    color: var(--header-text);
+    color: white;
     font-weight: 900;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -215,23 +216,42 @@
 
 @media (max-width: 900px) {
     .lightbox-content {
-        flex-direction: column;
+        flex-direction: column-reverse; 
         height: 90vh;
         width: 100%;
     }
+
     .lightbox-info-pane, .lightbox-image-pane {
         width: 100%;
     }
+
     .lightbox-info-pane {
-        height: 45%;
+        height: 30%; /* <-- BALANDLIK YANA KAMAYTIRILDI (30%) */
         text-align: center;
-        padding: 20px;
-        justify-content: flex-end;
-        padding-bottom: 30px;
+        padding: 15px; /* Joy kamligi uchun padding kamaytirildi */
+        justify-content: flex-start;
+        overflow-y: auto;
     }
+
     .lightbox-image-pane {
-        height: 55%;
+        height: 70%; /* <-- BALANDLIK YANA OSHIRILDI (70%) */
     }
-    .lightbox-title { font-size: 1.8rem; }
-    .lightbox-price { font-size: 1.2rem; }
+
+    /* Ma'lumotlar bloki kichraygani uchun shriftlarni moslashtiramiz */
+    .lightbox-title { 
+        font-size: 1.4rem; /* Shrift kichraytirildi */
+        margin-bottom: 8px;
+    }
+
+    .lightbox-price { 
+        font-size: 1.1rem; 
+        margin-bottom: 12px;
+    }
+
+    .lightbox-extra-info {
+        font-size: 0.9rem; /* Tavsif matni ham moslashtirildi */
+    }
+     .lightbox-image-pane img{
+        height: 310px !important;
+  }
 }

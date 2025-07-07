@@ -24,23 +24,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer-section footer-links">
-          <h4>Tezkor Havolalar</h4>
-          <ul>
-            <li><a href="#home">Bosh Sahifa</a></li>
-            <li><a href="#products">Mahsulotlar</a></li>
-            <li><a href="#collections">Kolleksiyalar</a></li>
-            <li><a href="#stores">Do'konlar</a></li>
-            <li><a href="#about">Biz Haqimizda</a></li>
-            <li><a href="#contact">Aloqa</a></li>
-          </ul>
-        </div>
+       
 
         <div className="footer-section footer-contact">
           <h4>Bog'lanish</h4>
           <p>Manzil: Toshkent sh., Chilonzor tum., 123-uy</p>
-          <p>Telefon: +998 71 123 45 67</p>
-          <p>Email: <a href="mailto:info@yourcomforthome.uz">info@yourcomforthome.uz</a></p>
+          <p>Telefon: +998 77 187 43 43</p>
+          <p>Email: <a href="mailto:info@yourcomforthome.uz">mxikmatullayev399@gmail.com</a></p>
         </div>
 
         <div className="footer-section footer-newsletter">

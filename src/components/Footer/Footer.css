@@ -1,18 +1,20 @@
 /* src/components/Footer.css */
 .footer {
-    background:transparent;
-    color: #f0f0f0; /* Yengil matn rangi */
-    padding: 60px 40px 20px; /* Yuqori, yon va pastki padding */
+    /* Fon saytning umumiy qora fonini oladi */
+    background: transparent; 
+    color: #f5f5f5; /* Asosiy matn rangi - deyarli oq */
+    padding: 60px 40px 20px;
     font-family: 'Roboto', sans-serif;
+    margin-top: 50px; /* Boshqa kontentdan ajratish uchun */
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsiv ustunlar */
-    gap: 30px; /* Bo'limlar orasidagi masofa */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
     max-width: 1200px;
-    margin: 0 auto 40px; /* Pastki qismdan masofa */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Pastki chiziq */
+    margin: 0 auto 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Chiziqni biroz yorqinroq qilamiz */
     padding-bottom: 40px;
 }
 
@@ -20,39 +22,31 @@
     padding: 15px 0;
 }
 
-.footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2em;
-    color: #ffffff;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
 .footer-section p {
     font-size: 0.95em;
     line-height: 1.6;
-    color: #ccc;
+    color: #dcdcdc; /* Oqish kulrang matn */
     margin-bottom: 20px;
 }
 
 .footer-section h4 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5em;
-    color: #ffffff;
+    color: #ffffff; /* Sarlavha - toza oq */
     margin-bottom: 25px;
     position: relative;
     padding-bottom: 10px;
 }
 
-/* Sarlavhalar ostidagi chiziq */
+/* Sarlavhalar ostidagi chiziq - TILLA RANG */
 .footer-section h4::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 50px; /* Chiziq uzunligi */
+    width: 50px;
     height: 3px;
-    background-color: #c70039; /* Asosiy rang */
+    background: linear-gradient(90deg, #d4af37, #b8860b); /* Tilla rang gradienti */
 }
 
 .footer-links ul {
@@ -65,14 +59,14 @@
 }
 
 .footer-links ul li a {
-    color: #ccc;
+    color: #dcdcdc;
     text-decoration: none;
     font-size: 1em;
     transition: color 0.3s ease;
 }
 
 .footer-links ul li a:hover {
-    color: #c70039;
+    color: #d4af37; /* Hover - TILLA RANG */
 }
 
 .footer-contact p {
@@ -80,7 +74,7 @@
 }
 
 .footer-contact a {
-    color: #c70039;
+    color: #d4af37; /* Email havolasi - TILLA RANG */
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -92,18 +86,18 @@
 /* Ijtimoiy tarmoq havolalari */
 .social-links {
     display: flex;
-    gap: 15px; /* Ikonkalar orasidagi masofa */
+    gap: 15px;
 }
 
 .social-links a {
-    color: #ccc;
+    color: #dcdcdc;
     font-size: 1.6em;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .social-links a:hover {
-    color: #c70039;
-    transform: translateY(-3px); /* Hoverda biroz ko'tarilish */
+    color: #d4af37; /* Hover - TILLA RANG */
+    transform: translateY(-3px);
 }
 
 /* Yangiliklarga obuna bo'lish formasi */
@@ -117,7 +111,7 @@
     padding: 12px 15px;
     border: 1px solid #555;
     background-color: #333;
-    color: #f0f0f0;
+    color: #f5f5f5;
     border-radius: 5px;
     font-size: 1em;
     outline: none;
@@ -129,33 +123,32 @@
 }
 
 .newsletter-form input[type="email"]:focus {
-    border-color: #c70039;
+    border-color: #d4af37; /* Focus - TILLA RANG */
 }
 
 .newsletter-form button {
-    background-color: #c70039;
+    background: linear-gradient(90deg, #d4af37, #b8860b); /* Tugma - TILLA RANG */
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .newsletter-form button:hover {
-    background-color: #a3002f;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); /* Hoverda soya */
     transform: translateY(-2px);
 }
 
-/* Pastki qism (copyright va huquqiy havolalar) */
+/* Pastki qism */
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9em;
-    color: #aaa;
+    color: #ccc; /* Yorqinroq kulrang */
 }
 
 .footer-bottom p {
@@ -169,16 +162,17 @@
 }
 
 .footer-legal-links a {
-    color: #aaa;
+    color: #ccc;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-legal-links a:hover {
-    color: #c70039;
+    color: #d4af37; /* Hover - TILLA RANG */
 }
 
 /* --- Media Queries (Responsivlik) --- */
+/* Bu qism o'zgarishsiz qoladi */
 
 @media (max-width: 992px) {
     .footer-content {
@@ -204,37 +198,26 @@
         padding: 40px 20px 15px;
     }
     .footer-content {
-        grid-template-columns: 1fr; /* Kichik ekranlarda bitta ustun */
-        text-align: center; /* Kontentni markazga olish */
+        grid-template-columns: 1fr;
+        text-align: center;
         gap: 25px;
         padding-bottom: 30px;
     }
-
-    /* Barcha footer section sarlavhalarining ostki chizig'ini markazga olamiz */
     .footer-section h4::after {
         left: 50%;
         transform: translateX(-50%);
     }
-
-    .footer-about .social-links {
-        justify-content: center; /* Ijtimoiy ikonkalarni markazga olish */
+    .social-links {
+        justify-content: center;
     }
-
-    .footer-newsletter .newsletter-form {
-        align-items: center; /* Input va tugmani markazga olish */
-    }
-
-    .footer-logo {
-        font-size: 2em;
+    .newsletter-form {
+        align-items: center;
     }
 }
 
 @media (max-width: 480px) {
     .footer {
         padding: 30px 15px 10px;
-    }
-    .footer-logo {
-        font-size: 1.8em;
     }
     .footer-section h4 {
         font-size: 1.2em;
